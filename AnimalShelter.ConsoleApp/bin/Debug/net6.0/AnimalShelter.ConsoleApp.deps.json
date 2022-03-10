@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "AnimalShelter.ConsoleApp/1.0.0": {
+        "dependencies": {
+          "AnimalShelter.Repository": "1.0.0"
+        },
+        "runtime": {
+          "AnimalShelter.ConsoleApp.dll": {}
+        }
+      },
+      "AnimalShelter.Repository/1.0.0": {
+        "runtime": {
+          "AnimalShelter.Repository.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AnimalShelter.ConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AnimalShelter.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

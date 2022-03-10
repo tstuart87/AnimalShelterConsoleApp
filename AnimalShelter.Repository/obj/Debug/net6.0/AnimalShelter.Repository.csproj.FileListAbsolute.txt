@@ -1,0 +1,12 @@
+C:\Projects\AnimalShelter\AnimalShelter.Repository\bin\Debug\net6.0\AnimalShelter.Repository.deps.json
+C:\Projects\AnimalShelter\AnimalShelter.Repository\bin\Debug\net6.0\AnimalShelter.Repository.dll
+C:\Projects\AnimalShelter\AnimalShelter.Repository\bin\Debug\net6.0\ref\AnimalShelter.Repository.dll
+C:\Projects\AnimalShelter\AnimalShelter.Repository\bin\Debug\net6.0\AnimalShelter.Repository.pdb
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\AnimalShelter.Repository.csproj.AssemblyReference.cache
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\AnimalShelter.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\AnimalShelter.Repository.AssemblyInfoInputs.cache
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\AnimalShelter.Repository.AssemblyInfo.cs
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\AnimalShelter.Repository.csproj.CoreCompileInputs.cache
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\AnimalShelter.Repository.dll
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\ref\AnimalShelter.Repository.dll
+C:\Projects\AnimalShelter\AnimalShelter.Repository\obj\Debug\net6.0\AnimalShelter.Repository.pdb
