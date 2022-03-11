@@ -45,6 +45,9 @@ namespace AnimalShelter.ConsoleApp
                     ViewAllDogs();
                     break;
                 case "3":
+                    FilterDogs();
+                    break;
+                case "4":
                     ExitApplication();
                     break;
                 default:
@@ -53,8 +56,60 @@ namespace AnimalShelter.ConsoleApp
             }
         }
 
+        //WRITE a method that asks the user whether or not they want a puppy or if they have kids - then get a list of koalafied dogs from the database and prints them out.
+
+        private void FilterDogs()
+        {
+            bool isPuppy = true;
+            bool hasKids = true;
+
+            _console.WantPuppy();
+            string isPuppyInput = GetUserInput();
+
+            switch (isPuppyInput)
+            {
+                case "Yes":
+                case "1":
+                    isPuppy = true;
+                    break;
+                case "No":
+                case "2":
+                    isPuppy = false;
+                    break;
+                default:
+                    isPuppy = false;
+                    break;
+            }
+
+            _console.DoYouHaveKids();
+            string hasKidsInput = GetUserInput();
+
+            switch (hasKidsInput.ToUpper())
+            {
+                case "Y":
+                    hasKids = true;
+                    break;
+                case "N":
+                    hasKids = false;
+                    break;
+                default:
+                    hasKids = false;
+                    break;
+            }
+
+            List<Dog> matchingList = _repo.GetDogs(isPuppy, hasKids);
+
+            foreach (Dog dog in matchingList)
+            {
+                _console.PrintDog(dog);
+            }
+
+            _console.PressAnyKeyToContinue();
+
+        }
+
         //CreateADog() method
-        public void CreateADog()
+        private void CreateADog()
         {
             _console.EnterAName();
             string dogName = GetUserInput();
@@ -100,7 +155,7 @@ namespace AnimalShelter.ConsoleApp
                 case "NO":
                 case "NAY":
                 case "NAH":
-                case "YOPE":
+                case "NOPE":
                 case "N":
                     isGoodWithKids = false;
                     break;
@@ -116,7 +171,7 @@ namespace AnimalShelter.ConsoleApp
         }
 
         //ViewAllDogs() method
-        public void ViewAllDogs()
+        private void ViewAllDogs()
         {
             List<Dog> dogList = _repo.GetAllDogs();
 
@@ -141,16 +196,29 @@ namespace AnimalShelter.ConsoleApp
 
     public class CustomConsole
     {
+        public void DoYouHaveKids()
+        {
+            Console.Write("\nDo you have children? (Y/N): ");
+        }
+
+        public void WantPuppy()
+        {
+            Console.WriteLine("\nDo you want a puppy?\n" +
+                    "1. Yes\n" +
+                    "2. No\n");
+        }
+
         public void PrintMainMenu()
         {
             Console.WriteLine("1. Add a DOG.\n" +
                     "2. View all DOGS.\n" +
-                    "3. EXIT.");
+                    "3. Filter DOGS.\n" +
+                    "4. EXIT.");
         }
 
         public void PrintDog(Dog dog)
         {
-            string goodWithKids = $"{dog.AnimalName} is better suited in a home with no small children";
+            string goodWithKids = $"{dog.AnimalName} is better suited in a home with no small children.";
 
             if (dog.IsGoodWithKids)
             {
@@ -158,7 +226,8 @@ namespace AnimalShelter.ConsoleApp
             }
 
             Console.WriteLine($"{dog.AnimalName.ToUpper()} | Age: {dog.Age}\n" +
-                        $"{goodWithKids}\n");
+                        $"{goodWithKids}\n"
+                        );
         }
 
         public void EnterSelection()

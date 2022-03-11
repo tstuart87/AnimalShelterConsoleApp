@@ -42,6 +42,21 @@ namespace AnimalShelter.Repository
     {
         public bool IsGoodWithKids { get; set; }
 
+        public bool IsPuppy
+        {
+            get
+            {
+                if (this.Age <= 2)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public Dog(string animalName, DietType typeOfDiet, int age, bool isGoodWithKids)
         {
             AnimalName = animalName;
@@ -56,6 +71,12 @@ namespace AnimalShelter.Repository
         public override void MakeNoise()
         {
             Console.WriteLine("woof woof.");
+        }
+
+        //OVERLOADED
+        public void MakeNoise(string woof)
+        {
+            Console.WriteLine("woof, bork, woof, woof...");
         }
     }
 
